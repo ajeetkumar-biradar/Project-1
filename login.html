@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body{
+        background-color:aliceblue;
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 40px;
+      padding-top: 10%;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      position: relative;
+    }
+
+    .form-group i {
+      position: absolute;
+      top: 12px;
+      left: 10px;
+      color: #aaa;
+    }
+
+    .form-group input {
+      padding-left: 30px;
+    }
+
+    .form-group button {
+      margin-top: 20px;
+    }
+    .text-center {
+      text-decoration: n;
+      margin-top: 20px;
+    }
+    .social-icons {
+      text-align: center;
+      margin-top: 30px;
+      
+    }
+    .social-icons a {
+      display: inline-block;
+      margin-right: 10px;
+      font-size: 20px;
+    }
+    .form-group.invalid input {
+      border-color: red;
+    }
+    .form-group.invalid .error-message {
+      display: block;
+      color: red;
+      margin-top: 5px;
+    }
+  </style>
+  <script>
+    // This function is called whenever the user navigates through the history
+    function preventGoingBack(event) {
+      window.history.pushState(null, null, window.location.href);
+    }
+  
+    // Attach the event listener to the 'popstate' event
+    window.addEventListener('popstate', preventGoingBack);
+  </script>
+  
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form action="log_check.jsp" method="post" autocomplete="off">
+      <div class="form-group">
+        <i class="fa fa-user fa"></i>
+        <input type="text" name="t1"  class="form-control" id="username" placeholder="Username"  autofocus required> 
+        <div class="error-message">
+          <!-- Username error message will appear here -->
+        </div>
+      </div>
+      <div class="form-group">
+        <i class="fa fa-lock"></i>
+        <input type="password" name="t2" class="form-control" id="password" placeholder="Password"  required >
+        <div class="error-message">
+          <!-- Password error message will appear here -->
+        </div>
+      </div> 
+      <button type="submit" class="btn btn-primary btn-block" >Login</button>
+      <div class="text-center">
+        <p>Don't have an account? <a href="registration.html">Registaration</a></p>
+      </div>
+    </form>
+    <div class="social-icons ">
+      <a href="https://facebook.com"><i class="fa fa-facebook fa-2x"></i></a>
+      <a href="https://twitter.com"><i class="fa fa-twitter fa-2x"></i></a>
+      <a href="https://instagram.com"><i class="fa fa-instagram fa-2x"></i></a>
+    </div>
+  </div>
+</body>
+</html>
